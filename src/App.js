@@ -32,6 +32,7 @@ function App() {
       else{
         document.body.style.backgroundColor=bg
       }
+      document.title="Dark Mode"
       showAlert('success','Dark Mode enabled')
     }
     else{

@@ -20,7 +20,7 @@ export default function TextForm(props) {
         setText(event.target.value)
     }
     const wordCount=(value)=>{
-        return value.split(" ").filter(str => { return str !== '' })
+        return value.split(/\s+/).filter(str => { return str !== '' })
         .length;
     }
 
@@ -65,10 +65,10 @@ export default function TextForm(props) {
 <div className="mb-3">
     <h1 className='mb-3'>{props.name}</h1>
   <textarea className="form-control mb-3" id="myBox" rows="8" value={text} onChange={handleOnChange}></textarea>
-  <button className='btn btn-primary'style={colrhndl()} onClick={handelUp}>Uppercase Conversion</button>
-  <button className='btn btn-primary mx-4' style={colrhndl()}onClick={handelLower}>Lowercase Conversion</button>
-  <button className='btn btn-primary mx-4'style={colrhndl()} onClick={handelClear}>Clear Text</button>
-  <button className='btn btn-primary mx-4'style={colrhndl()} onClick={handelInverse}>Inverse Text</button>
+  <button disabled={text.length===0} className='btn btn-primary  my-1 mx-1'style={colrhndl()} onClick={handelUp}>Uppercase Conversion</button>
+  <button disabled={text.length===0}className='btn btn-primary  my-1 mx-1' style={colrhndl()}onClick={handelLower}>Lowercase Conversion</button>
+  <button disabled={text.length===0}className='btn btn-primary  my-1 mx-1'style={colrhndl()} onClick={handelClear}>Clear Text</button>
+  <button disabled={text.length===0}className='btn btn-primary  my-1 mx-1'style={colrhndl()} onClick={handelInverse}>Inverse Text</button>
 </div>
 <div className='container'>
     <h1>Your text Summary</h1>
